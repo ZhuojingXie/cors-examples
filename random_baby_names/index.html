@@ -1,0 +1,19 @@
+<html>
+<body>
+<h1>Some Random Baby Names</h1>
+<ul id="names"></ul>
+
+<script>
+var ul = document.getElementById("names");
+
+for (var i = 0; i < 10; i++) {
+  fetch('http://api.completelyrandombaby.names:6426/').then(function(result) {
+    var li = document.createElement("li");
+    li.appendChild(document.createTextNode(result.body));
+    ul.appendChild(li);
+  });
+}
+
+</script>
+
+</html>
